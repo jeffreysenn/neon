@@ -254,6 +254,11 @@ win32_set_title(const char *title) {
 
 extern bool win32_create_core_opengl_context(void *window_handle, int major, int minor);
 
+int main()
+{
+	return WinMain(GetModuleHandle(NULL), NULL, GetCommandLineA(), SW_SHOW);
+}
+
 int WINAPI WinMain(_In_ HINSTANCE instance, 
                    _In_opt_ HINSTANCE prev_instance, 
                    _In_ LPSTR cmd_line, 

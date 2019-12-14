@@ -54,24 +54,24 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <TreatWarningAsError>true</TreatWarningAsError>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <DisableSpecificWarnings>4100;4189;4505;</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>include\;external\glm\include\;..\neon-core\include\;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4100;4189;4505;4201;</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>include\;..\external\glm\include\;..\neon-core\include\;..\neon-graphics\include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\build\;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>neon-core.$(PlatformShortName).$(Configuration.toLower()).lib;neon-main.$(PlatformShortName).$(Configuration.toLower()).lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>neon-core.$(PlatformShortName).$(Configuration.toLower()).lib;neon-main.$(PlatformShortName).$(Configuration.toLower()).lib;neon-graphics.$(PlatformShortName).$(Configuration.toLower()).lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -79,15 +79,15 @@
       <ConformanceMode>true</ConformanceMode>
       <TreatWarningAsError>true</TreatWarningAsError>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <DisableSpecificWarnings>4100;4189;4505;</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>include\;external\glm\include\;..\neon-core\include\;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4100;4189;4505;4201;</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>include\;..\external\glm\include\;..\neon-core\include\;..\neon-graphics\include\;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>..\build\;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>neon-core.$(PlatformShortName).$(Configuration.toLower()).lib;neon-main.$(PlatformShortName).$(Configuration.toLower()).lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>neon-core.$(PlatformShortName).$(Configuration.toLower()).lib;neon-main.$(PlatformShortName).$(Configuration.toLower()).lib;neon-graphics.$(PlatformShortName).$(Configuration.toLower()).lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -95,7 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fragment_shader.glsl" />
+    <None Include="assets\fragment_shader_font.glsl" />
+    <None Include="assets\heightmap\fragment_shader.glsl" />
+    <None Include="assets\heightmap\vertex_shader.glsl" />
+    <None Include="assets\heightmap\vertex_shader_font.glsl" />
     <None Include="assets\vertex_shader.glsl" />
+    <None Include="assets\vertex_shader_font.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\neon_testbed.h" />

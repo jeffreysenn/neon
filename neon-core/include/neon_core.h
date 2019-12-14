@@ -152,7 +152,7 @@ namespace neon {
    };
 
    struct application {
-      static application *create(int &width, int &height, string &title);
+      static application* create(int &width, int &height, string &title);
 
 	  application() = default;
       virtual ~application() = default;

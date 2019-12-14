@@ -90,18 +90,18 @@
     <ClCompile Include="source\neon_application.cc" />
     <ClCompile Include="source\neon_core.cc" />
     <ClCompile Include="source\neon_file_system.cc" />
-    <ClCompile Include="source\neon_graphics.cpp" />
     <ClCompile Include="source\neon_image.cc" />
     <ClCompile Include="source\neon_keyboard.cc" />
     <ClCompile Include="source\neon_math.cc" />
     <ClCompile Include="source\neon_mouse.cc" />
     <ClCompile Include="source\neon_time.cc" />
     <ClCompile Include="source\neon_window.cc" />
+    <ClCompile Include="source\neon_error.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\neon_core.h" />
-    <ClInclude Include="include\neon_graphics.h" />
     <ClInclude Include="include\neon_opengl.h" />
+    <ClInclude Include="include\neon_error.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
